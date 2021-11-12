@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         initHeaderView()
-//        initializeTableView()
+        initializeTableView()
         initBottomView()
         
         
@@ -181,7 +181,7 @@ class ViewController: UIViewController {
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
         tableView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1).isActive = true
         tableView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1).isActive = true
         

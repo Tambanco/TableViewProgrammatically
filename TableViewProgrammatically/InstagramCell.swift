@@ -129,6 +129,13 @@ class InstagramCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: InstagramCell.reuseID)
         
+        addSubview(cardView)
+        
+        cardView.translatesAutoresizingMaskIntoConstraints = false
+        cardView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
+        cardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
+        cardView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
+        cardView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 10).isActive = true
         
         
 }

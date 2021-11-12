@@ -44,6 +44,8 @@ class SimpleTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: SimpleTableViewCell.reuseID)
         
+        backgroundColor = .yellow
+        
         //1 layer - UIView
         addSubview(cardView)
         

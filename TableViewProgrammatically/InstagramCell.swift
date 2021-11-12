@@ -132,10 +132,36 @@ class InstagramCell: UITableViewCell {
         addSubview(cardView)
         
         cardView.translatesAutoresizingMaskIntoConstraints = false
-        cardView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
-        cardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
-        cardView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
-        cardView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 10).isActive = true
+        cardView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
+        cardView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
+        cardView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
+        cardView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 20).isActive = true
+        
+        cardView.addSubview(profileImageView)
+        cardView.addSubview(usernameLabel)
+        cardView.addSubview(followButton)
+        cardView.addSubview(postMenuButton)
+        cardView.addSubview(postImageView)
+        cardView.addSubview(likesImageView)
+        cardView.addSubview(commentsImageView)
+        cardView.addSubview(repostsImageView)
+        cardView.addSubview(bookmarksImageView)
+        cardView.addSubview(likesCountLabel)
+        cardView.addSubview(postCommnentLabel)
+        cardView.addSubview(moreButton)
+        cardView.addSubview(dateMarkLabel)
+        
+        
+        profileImageView.translatesAutoresizingMaskIntoConstraints = false
+        profileImageView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 20).isActive = true
+        profileImageView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 20).isActive = true
+        
+        usernameLabel.translatesAutoresizingMaskIntoConstraints = false
+        usernameLabel.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 20).isActive = true
+        usernameLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 20).isActive = true
+        usernameLabel.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor).isActive = true
+        
+        
         
         
 }

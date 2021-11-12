@@ -11,21 +11,9 @@ class InstagramCell: UITableViewCell {
     static var reuseID = "InstagramCell"
     
     //1 layer
-//    let headerView: UIView = {
-//        let view = UIView()
-//        view.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-//        return view
-//    }()
-    
     let cardView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
-        return view
-    }()
-    
-    let bottomView: UIView = {
-        let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         return view
     }()
     
@@ -138,52 +126,10 @@ class InstagramCell: UITableViewCell {
         return label
     }()
     
-    //2 layer for bottomView
-    let homeImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "house")
-        imageView.clipsToBounds = true
-        return imageView
-    }()
-    
-    let searchImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "magnifyingglass")
-        imageView.clipsToBounds = true
-        return imageView
-    }()
-    
-    let newPostImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "plus.square")
-        imageView.clipsToBounds = true
-        return imageView
-    }()
-    
-    let interestingImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "suit.heart")
-        imageView.clipsToBounds = true
-        return imageView
-    }()
-    
-    let personImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "person")
-        imageView.clipsToBounds = true
-        return imageView
-    }()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: InstagramCell.reuseID)
         
-        //1 layer
-//        addSubview(headerView)
-//        
-//        headerView.translatesAutoresizingMaskIntoConstraints = false
-//        headerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-//        headerView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1).isActive = true
-//        headerView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2).isActive = true
+        
         
 }
     

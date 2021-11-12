@@ -17,6 +17,13 @@ class ViewController: UIViewController {
         return view
     }()
     
+    
+    let bottomView: UIView = {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+        return view
+    }()
+    
     private let imageURLs = [
         "https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1064&q=80",
         "https://images.unsplash.com/photo-1522196772883-393d879eb14d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1585&q=80",
@@ -30,7 +37,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         initHeaderView()
-        initializeTableView()
+//        initializeTableView()
+        initBottomView()
+        
         
     }
     
@@ -82,6 +91,83 @@ class ViewController: UIViewController {
         directImageView.translatesAutoresizingMaskIntoConstraints = false
         directImageView.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 60).isActive = true
         directImageView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20).isActive = true
+        
+        
+    }
+    
+    private func initBottomView() {
+        let homeImageView: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(systemName: "house")
+            imageView.tintColor = #colorLiteral(red: 0.0431372549, green: 0.0431372549, blue: 0.03921568627, alpha: 1)
+            imageView.clipsToBounds = true
+            return imageView
+        }()
+        
+        let searchImageView: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(systemName: "magnifyingglass")
+            imageView.tintColor = #colorLiteral(red: 0.0431372549, green: 0.0431372549, blue: 0.03921568627, alpha: 1)
+            imageView.clipsToBounds = true
+            return imageView
+        }()
+        
+        let newPostImageView: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(systemName: "plus.square")
+            imageView.tintColor = #colorLiteral(red: 0.0431372549, green: 0.0431372549, blue: 0.03921568627, alpha: 1)
+            imageView.clipsToBounds = true
+            return imageView
+        }()
+        
+        let interestingImageView: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(systemName: "suit.heart")
+            imageView.tintColor = #colorLiteral(red: 0.0431372549, green: 0.0431372549, blue: 0.03921568627, alpha: 1)
+            imageView.clipsToBounds = true
+            return imageView
+        }()
+        
+        let personImageView: UIImageView = {
+            let imageView = UIImageView()
+            imageView.image = UIImage(systemName: "person")
+            imageView.tintColor = #colorLiteral(red: 0.0431372549, green: 0.0431372549, blue: 0.03921568627, alpha: 1)
+            imageView.clipsToBounds = true
+            return imageView
+        }()
+        
+        self.view.addSubview(bottomView)
+        
+        bottomView.translatesAutoresizingMaskIntoConstraints = false
+        bottomView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        bottomView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1).isActive = true
+        bottomView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.15).isActive = true
+        
+        bottomView.addSubview(homeImageView)
+        bottomView.addSubview(searchImageView)
+        bottomView.addSubview(newPostImageView)
+        bottomView.addSubview(interestingImageView)
+        bottomView.addSubview(personImageView)
+        
+        homeImageView.translatesAutoresizingMaskIntoConstraints = false
+        homeImageView.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 20).isActive = true
+        homeImageView.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -60).isActive = true
+        
+        searchImageView.translatesAutoresizingMaskIntoConstraints = false
+        searchImageView.leadingAnchor.constraint(equalTo: homeImageView.trailingAnchor, constant: 20).isActive = true
+        searchImageView.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -60).isActive = true
+        
+        newPostImageView.translatesAutoresizingMaskIntoConstraints = false
+        newPostImageView.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor).isActive = true
+        newPostImageView.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -60).isActive = true
+        
+        interestingImageView.translatesAutoresizingMaskIntoConstraints = false
+        interestingImageView.trailingAnchor.constraint(equalTo: personImageView.leadingAnchor, constant: -20).isActive = true
+        interestingImageView.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -60).isActive = true
+        
+        personImageView.translatesAutoresizingMaskIntoConstraints = false
+        personImageView.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -20).isActive = true
+        personImageView.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -60).isActive = true
         
         
     }

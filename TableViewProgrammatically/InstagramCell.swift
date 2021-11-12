@@ -11,11 +11,11 @@ class InstagramCell: UITableViewCell {
     static var reuseID = "InstagramCell"
     
     //1 layer
-    let headerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        return view
-    }()
+//    let headerView: UIView = {
+//        let view = UIView()
+//        view.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+//        return view
+//    }()
     
     let cardView: UIView = {
         let view = UIView()
@@ -27,29 +27,6 @@ class InstagramCell: UITableViewCell {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         return view
-    }()
-    
-    //2 layer for headerView
-    let makePhotoImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "camera")
-        imageView.clipsToBounds = true
-        return imageView
-    }()
-    
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Instagram"
-        label.textAlignment = .center
-        label.font = UIFont(name: "Arial", size: 22)
-        return label
-    }()
-    
-    let directImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "paperplane")
-        imageView.clipsToBounds = true
-        return imageView
     }()
     
     //2 layer for cardView
@@ -201,11 +178,13 @@ class InstagramCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: InstagramCell.reuseID)
         
         //1 layer
-        addSubview(headerView)
+//        addSubview(headerView)
+//        
+//        headerView.translatesAutoresizingMaskIntoConstraints = false
+//        headerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+//        headerView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1).isActive = true
+//        headerView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2).isActive = true
         
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        headerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        headerView.widthAnchor.constraint(equalTo: <#T##NSLayoutDimension#>, multiplier: <#T##CGFloat#>)
 }
     
     required init?(coder: NSCoder) {

@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     private func initializeTableView() {
         tableView = UITableView()
-        tableView.rowHeight = 50
+        tableView.rowHeight = 400
         
         self.view.addSubview(tableView)
         
@@ -41,6 +41,7 @@ class ViewController: UIViewController {
         tableView.register(SimpleTableViewCell.self, forCellReuseIdentifier: SimpleTableViewCell.reuseID)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = .none
     }
 }
 
@@ -52,7 +53,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SimpleTableViewCell.reuseID, for: indexPath) as! SimpleTableViewCell
-        
+        cell.postImageView.load(url: URL(string: imageURLs[indexPath.row])!)
         
         return cell
     }

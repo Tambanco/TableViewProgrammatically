@@ -9,12 +9,11 @@ import UIKit
 
 class SimpleTableViewCell: UITableViewCell {
     
-    static let reuseID = "cell"
+    static let reuseID = "cardViewCell"
     
     let cardView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 14
-        view.backgroundColor = .white
         return view
     }()
     
@@ -28,14 +27,16 @@ class SimpleTableViewCell: UITableViewCell {
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 25
+        imageView.image = UIImage(named: "avatar.png")
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
-    let usernameLabel: UILabel = {
+    var usernameLabel: UILabel = {
         let label = UILabel()
         label.text = "@tambanco"
+        label.textColor = .white
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 14)
         return label
@@ -44,19 +45,19 @@ class SimpleTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: SimpleTableViewCell.reuseID)
         
-        backgroundColor = .yellow
-        
         //1 layer - UIView
         addSubview(cardView)
         
-        cardView.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true
-        cardView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 12).isActive = true
-        cardView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
-        cardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
+        cardView.translatesAutoresizingMaskIntoConstraints = false
+        cardView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        cardView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        cardView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        cardView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
         //2 layer - UIImageView
         cardView.addSubview(postImageView)
         
+        postImageView.translatesAutoresizingMaskIntoConstraints = false
         postImageView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 12).isActive = true
         postImageView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -12).isActive = true
         postImageView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 12).isActive = true
@@ -66,6 +67,7 @@ class SimpleTableViewCell: UITableViewCell {
         //3 layer - UIImageView
         cardView.addSubview(profileImageView)
         
+        profileImageView.translatesAutoresizingMaskIntoConstraints = false
         profileImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         profileImageView.topAnchor.constraint(equalTo: postImageView.topAnchor, constant: 12).isActive = true
@@ -74,6 +76,7 @@ class SimpleTableViewCell: UITableViewCell {
         //4 layer - UILabel
         cardView.addSubview(usernameLabel)
         
+        usernameLabel.translatesAutoresizingMaskIntoConstraints = false
         usernameLabel.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor).isActive = true
         usernameLabel.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 8).isActive = true
         

@@ -1,5 +1,5 @@
 //
-//  TableViewCell.swift
+//  SimpleTableViewCell.swift
 //  TableViewProgrammatically
 //
 //  Created by tambanco 🥳 on 12.11.2021.
@@ -35,7 +35,7 @@ class SimpleTableViewCell: UITableViewCell {
     
     let usernameLabel: UILabel = {
         let label = UILabel()
-        label.text = "@itsdanielkioko"
+        label.text = "@tambanco"
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 14)
         return label
@@ -82,5 +82,4 @@ class SimpleTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
